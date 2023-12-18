@@ -5,6 +5,16 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 management:
+    endpoint:
+        health:
+            probes:
+                enabled: true
+        prometheus:
+            enabled: true
+    endpoints:
+        web:
+            exposure:
+                include: health,env,metrics,beans,loggers,football,prometheus
     tracing:
         sampling:
             probability: 1.0
